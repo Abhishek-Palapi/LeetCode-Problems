@@ -1,0 +1,21 @@
+let val = 4;
+var op=[0,1];
+var compute=false;
+console.log(printPosibities(4))
+function printPosibities(data){
+  var str=[0,1]
+  return heplerFunction(data,str)
+}
+function heplerFunction(data){ 
+  if(data==1){
+    return ['0',"1"]
+  }
+ let returnValue = heplerFunction(data-1)
+ let dummy =[];
+     returnValue.forEach(val=>{
+        op.forEach(bin=>{
+          dummy.push(val.toString()+bin.toString())
+        })
+    })
+    return dummy
+}
